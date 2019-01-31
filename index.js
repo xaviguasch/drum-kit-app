@@ -1,14 +1,13 @@
-const buttonArray = document.querySelectorAll('button')
+const drumButtons = document.querySelectorAll('.drum')
 
-// buttonArray.forEach((button) => {
+// drumButtons.forEach((button) => {
 //     button.addEventListener('click', handleClick)
 // })
 
-for (let i = 0; i < buttonArray.length; i++) {
-    buttonArray[i].addEventListener('click', handleClick)
+for (let i = 0; i < drumButtons.length; i++) {
+    drumButtons[i].addEventListener('click', handleClick)
 }
 
 function handleClick() {
     console.log('I got clicked!');
-
 }
