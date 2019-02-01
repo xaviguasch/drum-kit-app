@@ -4,10 +4,12 @@ const drumButtons = document.querySelectorAll('.drum')
 //     button.addEventListener('click', handleClick)
 // })
 
-for (let i = 0; i < drumButtons.length; i++) {
-    drumButtons[i].addEventListener('click', handleClick)
-}
+const audio = new Audio('./sounds/tom-1.mp3')
 
-function handleClick() {
-    console.log('I got clicked!');
+for (let i = 0; i < drumButtons.length; i++) {
+    drumButtons[i].addEventListener('click', function () {
+        audio.play()
+        console.log('I got clicked!')
+
+    })
 }
