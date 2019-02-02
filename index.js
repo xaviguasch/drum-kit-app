@@ -10,7 +10,9 @@ const drumButtons = document.querySelectorAll('.drum')
 for (let i = 0; i < drumButtons.length; i++) {
     drumButtons[i].addEventListener('click', function () {
         const buttonInnerHTML = this.innerHTML
+
         makeSound(buttonInnerHTML)
+        buttonAnimation(buttonInnerHTML)
     })
 }
 
@@ -19,6 +21,7 @@ for (let i = 0; i < drumButtons.length; i++) {
 
 document.addEventListener('keydown', function (event) {
     makeSound(event.key)
+    buttonAnimation(event.key)
 })
 
 
@@ -58,5 +61,16 @@ function makeSound(key) {
         default:
             console.log(key)
     }
+
+}
+
+function buttonAnimation(currentKey) {
+    const activeButton = document.querySelector(`.${currentKey}`)
+
+    activeButton.classList.add('pressed')
+
+    setTimeout(() => {
+        activeButton.classList.remove('pressed')
+    }, 100);
 
 }
